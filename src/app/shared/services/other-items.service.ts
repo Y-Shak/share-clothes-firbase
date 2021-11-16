@@ -53,17 +53,22 @@ import { ArrayItems } from '../models/arrayItems.model';
           
             this.allItems = data.val() ? data.val() : {};
             this.emitAllItems();
+            
           }
         );
 
-        this.allItems.__defineGetter__('gimmeFive', function() { return 5; });
-          console.log(this.allItems.gimmeFive)
+        
     }
+    obj : any;
     getItems(currentUserUID :string) {
       
       firebase.database().ref('/items/'+currentUserUID)
         .on('value', (data: DataSnapshot) => {
             this.items = data.val() ? data.val() : [];
+            // this.obj.__defineGetter__('gimmeFive', function() { return 5; });
+            // console.log(data.val())
+            // console.log(this.obj.gimmeFive)
+            
             this.emitItems();
           }
         );

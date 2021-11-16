@@ -12,6 +12,10 @@ import { MyListItemsComponent } from './my-list-items/my-list-items.component';
 import { MyItemComponent } from './my-list-items/my-item/my-item.component';
 import { OtherItemsService } from './shared/services/other-items.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { AuthService } from './shared/services/auth.service';
+import { AuthGuardService } from './shared/services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SideBarComponent,
     OtherItemComponent,
     MyListItemsComponent,
-    MyItemComponent
+    MyItemComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   providers: [
-    OtherItemsService
+    OtherItemsService, AuthService, AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

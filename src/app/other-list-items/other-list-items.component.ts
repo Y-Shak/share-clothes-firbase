@@ -29,7 +29,9 @@ export class OtherListItemsComponent implements OnInit,OnDestroy {
     this.itemsSubscription = this.otherItemsService.itemsSubject.subscribe(
       (data : Item[])=> {
         this.items =data;
-        // console.log(data)
+        console.log(data);
+        console.log(this.items);
+
         // this.tempItemsArray = data;
       }
     );
