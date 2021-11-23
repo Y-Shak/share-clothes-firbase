@@ -3,7 +3,14 @@ export class Item {
         public userID :string,
         public type : string ,
         public etat : string,
-        public photo? : string
+        public photo? : string,
+        public taille? : string,
+        public pointure? : number,
+        public sexe? : string,
+        public age? : string,
+        public reserved?: boolean,
+        public wantedToo ?: number,
+        public taken? : boolean
 
     ){
 

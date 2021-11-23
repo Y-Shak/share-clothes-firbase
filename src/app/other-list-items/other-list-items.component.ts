@@ -23,14 +23,11 @@ export class OtherListItemsComponent implements OnInit,OnDestroy {
   
   ngOnInit() {
     this.initForm();
-    console.log(this.itemForm)
 
     // get all part 
     this.itemsSubscription = this.otherItemsService.itemsSubject.subscribe(
       (data : Item[])=> {
         this.items =data;
-        console.log(data);
-        console.log(this.items);
 
         // this.tempItemsArray = data;
       }
@@ -62,7 +59,7 @@ export class OtherListItemsComponent implements OnInit,OnDestroy {
 
 
   // ------------------------ PARTIE FORMULAIRE -----------
-  // TODO soit la faire en modal soit mettre un component
+  // DONE  en modal
 
   
   itemForm!: FormGroup;
@@ -79,10 +76,17 @@ export class OtherListItemsComponent implements OnInit,OnDestroy {
       userID: ['0000', Validators.required],
       type: ['', Validators.required],
       etat: '',
-      photo: ''
+      photo: '',
+      taille: '' ,
+      pointure : 0,
+      sexe : '' ,
+      age : 0 ,
+      reserved: false,
+      wantedToo : 0 ,
+      taken : false
     });
   }
-  
+
   resetForm(){
     this.initForm()
   }
@@ -93,6 +97,8 @@ export class OtherListItemsComponent implements OnInit,OnDestroy {
     const type = this.itemForm.get('type')!.value;
     const etat = this.itemForm.get('etat')!.value;
     const photo = this.itemForm.get('photo')!.value;
+    const sexe = this.itemForm.get('sexe')!.value;
+    console.log(sexe);
     const newItem = new Item(userID,type,etat,photo);
     this.otherItemsService.createNewItem(newItem);
     console.log(newItem)

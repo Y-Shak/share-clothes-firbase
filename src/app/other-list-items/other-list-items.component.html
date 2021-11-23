@@ -133,7 +133,6 @@
                     <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                   <div class="mb-3">
                     <label for="userID" class="form-label">Type vetement</label>
                     <div class="row">
@@ -141,43 +140,46 @@
                             <input type="text" formControlName="userID" id="userID" class="form-control">
                         </div>
                     </div>
-                </div>
-                <!-- <div class="mb-3 form-check">
-                    <input type="checkbox" formControlName="bleeding" class="form-check-input" id="bleeding">
-                    <label class="form-check-label" for="bleeding">Yes, Bleeding</label>
-                  </div> -->
-                <div class="mb-3">
-                  <label for="type" class="form-label">Couleur</label>
-                  
-                    <select class="form-select" type="text" id="type" name="type" formControlName="type" aria-describedby="typeHelp">
-                      <option value="" selected>Sélectionner </option>
-                      <option value="CHEMISE">Chemise</option>
-                      <option value="PANTALON">Pantalon</option>
-                      <option value="MANTEAU">Manteau</option>
-                    </select>
-                    <div id="typeHelp" class="form-text">
-                      Selectionnez le type de l'article : chemise, pantalon, manteau
                   </div>
-                </div>
-                <div class="mb-3">
-                  <label for="etat" class="form-label">Intensité</label>
-                    <select class="form-select" type="text" id="etat" name="etat" formControlName="etat" aria-describedby="etatHelp">
-                        <option value="" selected>Sélectionner </option>
-                        <option value="ACCEPTABLE">Acceptable</option>
-                        <option value="BIEN">Bien</option>
-                        <option value="TRES_BIEN">Très bien </option>
-                        <option value="NEUF">neuf</option>
-                    </select>
-                    <div id="etatHelp" class="form-text">
-                        Selectionnez l'état de l'article 
-                    </div>
-                </div>
-                <div class="mb-3">
-                  <label for="photo" class="form-label">Photo  </label>
-                  <input id="photo"
-                            class="form-control" formControlName="photo" />
+                  <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" formControlName="sexe" id="Femme" value="Femme" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Femme">Femme</label>
                   
-                </div>
+                    <input type="radio" class="btn-check" formControlName="sexe" id="Homme" value="Homme" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Homme">Homme</label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="type" class="form-label">Type</label>
+                    
+                      <select class="form-select" type="text" id="type" name="type" formControlName="type" aria-describedby="typeHelp">
+                        <option value="" selected>Sélectionner </option>
+                        <option value="CHEMISE">Chemise</option>
+                        <option value="PANTALON">Pantalon</option>
+                        <option value="MANTEAU">Manteau</option>
+                      </select>
+                      <div id="typeHelp" class="form-text">
+                        Selectionnez le type de l'article : chemise, pantalon, manteau
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="etat" class="form-label">Etat</label>
+                      <select class="form-select" type="text" id="etat" name="etat" formControlName="etat" aria-describedby="etatHelp">
+                          <option value="" selected>Sélectionner </option>
+                          <option value="ACCEPTABLE">Acceptable</option>
+                          <option value="BIEN">Bien</option>
+                          <option value="TRES_BIEN">Très bien </option>
+                          <option value="NEUF">neuf</option>
+                      </select>
+                      <div id="etatHelp" class="form-text">
+                          Selectionnez l'état de l'article 
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="photo" class="form-label">Photo  </label>
+                    <input id="photo"
+                              class="form-control" formControlName="photo" />
+                    
+                  </div>
 
                 </div>
                 <div class="modal-footer justify-content-between">
